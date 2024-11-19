@@ -7,7 +7,7 @@ const exec = util.promisify(require('child_process').exec);
 
 const app = express();
 
-// Ensure uploads directory exists
+
 const uploadsDir = 'uploads';
 if (!fs.existsSync(uploadsDir)){
     fs.mkdirSync(uploadsDir);
@@ -39,19 +39,19 @@ const upload = multer({
   }
 });
 
-// Function to scan image using zbarimg
+
 async function scanImage(imagePath) {
   try {
-    // Run zbarimg command
+  
     const { stdout, stderr } = await exec(`zbarimg --quiet --raw ${imagePath}`);
     
-    // If we get output, parse it
+   
     if (stdout) {
       const results = stdout.trim().split('\n');
       
-      // Return the first found code
+     
       if (results.length > 0) {
-        // Determine if it's a QR code or barcode based on the format
+       
         const isQR = results[0].startsWith('QR-Code:');
         const data = isQR ? results[0].substring(8) : results[0];
         
@@ -119,7 +119,7 @@ app.use((error, req, res, next) => {
   });
 });
 
-// Add a test endpoint to verify zbar installation
+
 app.get('/test-zbar', async (req, res) => {
   try {
     const { stdout, stderr } = await exec('zbarimg --version');
