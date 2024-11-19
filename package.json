@@ -1,0 +1,25 @@
+{
+  "name": "mobillor",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@ericblade/quagga2": "^1.8.4",
+    "@zxing/library": "^0.21.3",
+    "axios": "^1.7.7",
+    "child_process": "^1.0.2",
+    "express": "^4.21.1",
+    "fs": "^0.0.1-security",
+    "multer": "^1.4.5-lts.1",
+    "node-zxing": "^0.1.4",
+    "path": "^0.12.7",
+    "quagga": "^0.12.1",
+    "sharp": "^0.33.5"
+  }
+}
